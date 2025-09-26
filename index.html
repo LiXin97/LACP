@@ -25,30 +25,84 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Xin Li",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Nanyang Technological University"
+          },
+          "email": "xin019@e.ntu.edu.sg"
+        },
+        {
+          "@type": "Person",
+          "name": "Mengbing Liu",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Nanyang Technological University"
+          },
+          "email": "mengbing001@e.ntu.edu.sg"
+        },
+        {
+          "@type": "Person",
+          "name": "Chau Yuen",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Nanyang Technological University"
+          },
+          "email": "chau.yuen@ntu.edu.sg"
+        }
+      ],
+      "datePublished": "2025",
+      "publisher": {
+        "@type": "Organization",
+        "name": "NeurIPS 2025 Workshop on AI for Next Generation Networks"
+      },
+      "description": "A unified, telecom-inspired communication protocol ensuring safety, interoperability, and scalability for LLM agents in Next Generation (NextG) networks.",
+      "keywords": ["LLM", "AI agents", "communication protocol", "NeurIPS", "NextG networks", "LACP", "interoperability"],
+      "url": window.location.href,
+      "image": "images/LACP-teaser_updated.png"
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="container nav-flex">
                 <div class="nav-logo">
                     <h2>LACP</h2>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#abstract" class="nav-link">Abstract</a></li>
+                    <li><a href="#problem" class="nav-link">Problem</a></li>
                     <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                    <li><a href="#validation" class="nav-link">Validation</a></li>
                     <li><a href="#code" class="nav-link">Code</a></li>
+                    <li><a href="#citation" class="nav-link">Citation</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
+    <main id="main-content" role="main">
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -62,14 +116,36 @@
                 <p class="hero-subtitle">
                     Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary
                 </p>
-                <p class="hero-authors">
-                    Authors: Xin Li, Mengbing Liu, Chau Yuen<br>
-                    Nanyang Technological University
-                </p>
+                <div class="hero-authors">
+                    <div class="authors-line">
+                        <span class="authors-label">Authors:</span>
+                        <a href="https://lixin.ai/" class="author-name" target="_blank">Xin Li</a>,
+                        <a href="https://liumengbing.com/" class="author-name" target="_blank">Mengbing Liu</a>,
+                        <a href="https://blogs.ntu.edu.sg/chau-yuen/" class="author-name" target="_blank">Chau Yuen</a>
+                    </div>
+                    <div class="affiliation-line">
+                        <i class="fas fa-university"></i>
+                        <span>Nanyang Technological University, Singapore</span>
+                    </div>
+                </div>
                 <p class="hero-description">
-                    A unified, telecom-inspired communication protocol ensuring safety, interoperability,
+                    A unified, telecom-inspired communication protocol ensuring safety, interoperability,<br>
                     and scalability for LLM agents in Next Generation (NextG) networks.
                 </p>
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <span class="metric-number">3.5%</span>
+                        <span class="metric-label">Latency Overhead</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-number">30%</span>
+                        <span class="metric-label">Size Overhead</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-number">3</span>
+                        <span class="metric-label">Layer Architecture</span>
+                    </div>
+                </div>
                 <div class="hero-actions">
                     <a href="assets/neurips_2025.pdf" class="btn btn-primary" target="_blank">
                         <i class="fas fa-file-pdf"></i>
@@ -80,9 +156,6 @@
                         View Architecture
                     </a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/LACP-teaser_updated.png" alt="LACP Architecture Overview" class="teaser-image">
             </div>
         </div>
     </section>
@@ -112,6 +185,69 @@
     </section>
 
 
+    <!-- Problem Statement -->
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <h2 class="section-title">The Problem: Fragmented Communication Landscape</h2>
+            <div class="problem-content">
+                <p class="problem-intro">
+                    The current ecosystem of LLM agent communication resembles the early "protocol wars" of networking,
+                    creating a fragmented landscape that stifles innovation and poses significant risks.
+                </p>
+
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Crippling Interoperability Gaps</h3>
+                        <p>The absence of a universal standard necessitates bespoke, often brittle, integrations between different agent systems, impeding scalable multi-agent development.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security as an Afterthought</h3>
+                        <p>Security is often not a core component of existing protocols, exposing systems to data tampering, agent spoofing, and adversarial attacks.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Monolithic Design & Lack of Transactional Integrity</h3>
+                        <p>Current approaches tightly couple communication logic with agent implementation, leading to systems that are challenging to maintain and extend.</p>
+                    </div>
+                </div>
+
+                <div class="protocol-comparison">
+                    <h3>Current Protocol Landscape</h3>
+                    <div class="protocols-list">
+                        <div class="protocol-item">
+                            <strong>OpenAI Function Calling</strong>
+                            <span>JSON schema, API key auth only</span>
+                        </div>
+                        <div class="protocol-item">
+                            <strong>LangChain Agent Protocol</strong>
+                            <span>REST API, HTTP/JWT auth only</span>
+                        </div>
+                        <div class="protocol-item">
+                            <strong>Anthropic MCP</strong>
+                            <span>JSON-RPC/HTTP, OAuth 2.1</span>
+                        </div>
+                        <div class="protocol-item">
+                            <strong>IBM/LF ACP</strong>
+                            <span>JSON-RPC, Signed capability tokens</span>
+                        </div>
+                        <div class="protocol-item">
+                            <strong>Google A2A</strong>
+                            <span>HTTP/Protobuf, Capability discovery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Key Features -->
     <section class="features">
         <div class="container">
@@ -138,13 +274,6 @@
                     <h3>Protocol Proposal</h3>
                     <p>LACP, a layered, secure, and extensible framework for LLM-agent interoperability.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Critical Discourse</h3>
-                    <p>Anticipation and rebuttal of key counterarguments to standardization.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -164,24 +293,47 @@
                             <div class="layer-number">1</div>
                             <div class="layer-content">
                                 <h4>Semantic Layer</h4>
-                                <p>Conveys the <em>intent</em> of communication with universal message types (PLAN, ACT, OBSERVE)
-                                that can be extended with domain-specific content.</p>
+                                <p>Conveys the <em>intent</em> of communication with universal message types that can be extended with domain-specific content:</p>
+                                <div class="message-types">
+                                    <div class="message-type">
+                                        <code>PLAN</code>
+                                        <span>Express high-level intent (intent_id, role, natural_language)</span>
+                                    </div>
+                                    <div class="message-type">
+                                        <code>ACT</code>
+                                        <span>Invoke external tools (intent_id, tool_call, params)</span>
+                                    </div>
+                                    <div class="message-type">
+                                        <code>OBSERVE</code>
+                                        <span>Return results/status (intent_id, status, output)</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="layer">
                             <div class="layer-number">2</div>
                             <div class="layer-content">
                                 <h4>Transactional Layer</h4>
-                                <p>Ensures reliability and integrity through message signing, sequencing, unique transaction IDs,
-                                and support for atomic transactions.</p>
+                                <p>Ensures reliability and integrity through comprehensive transaction management:</p>
+                                <ul class="layer-features">
+                                    <li><i class="fas fa-signature"></i> Message signing with JSON Web Signatures (JWS)</li>
+                                    <li><i class="fas fa-sort-numeric-up"></i> Message sequencing for ordered delivery</li>
+                                    <li><i class="fas fa-fingerprint"></i> Unique transaction IDs for idempotency</li>
+                                    <li><i class="fas fa-handshake"></i> Two-phase commit for atomic operations</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="layer">
                             <div class="layer-number">3</div>
                             <div class="layer-content">
                                 <h4>Transport Layer</h4>
-                                <p>Handles efficient and secure delivery, operating transport-agnostically over various
-                                network protocols (HTTP/2, QUIC, WebSockets).</p>
+                                <p>Handles efficient and secure delivery, operating transport-agnostically:</p>
+                                <ul class="layer-features">
+                                    <li><i class="fas fa-globe"></i> HTTP/2 for modern web compatibility</li>
+                                    <li><i class="fas fa-bolt"></i> QUIC for low-latency applications</li>
+                                    <li><i class="fas fa-exchange-alt"></i> WebSockets for real-time communication</li>
+                                    <li><i class="fas fa-compress"></i> Binary encoding for efficiency</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -193,6 +345,168 @@
         </div>
     </section>
 
+
+    <!-- Experimental Validation -->
+    <section id="validation" class="validation-section">
+        <div class="container">
+            <h2 class="section-title">Experimental Validation</h2>
+            <div class="validation-content">
+                <p class="validation-intro">
+                    We implemented a working LACP prototype and conducted comprehensive experiments
+                    validating performance, interoperability, and security guarantees.
+                </p>
+
+                <div class="experiments-grid">
+                    <div class="experiment-card">
+                        <div class="experiment-header">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h3>Performance Analysis</h3>
+                        </div>
+                        <div class="experiment-results">
+                            <div class="result-metric">
+                                <span class="metric-value">3.5%</span>
+                                <span class="metric-desc">Latency overhead for complex messages</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="metric-value">30%</span>
+                                <span class="metric-desc">Size overhead for realistic payloads</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="metric-value">10,000</span>
+                                <span class="metric-desc">Messages tested across payload sizes</span>
+                            </div>
+                        </div>
+                        <p>LACP's overhead is inversely proportional to message complexity, with minimal impact on realistic agent interactions.</p>
+                    </div>
+
+                    <div class="experiment-card">
+                        <div class="experiment-header">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <h3>Interoperability Demo</h3>
+                        </div>
+                        <div class="experiment-flow">
+                            <div class="flow-step">
+                                <i class="fas fa-robot"></i>
+                                <span>LangChain Agent</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <i class="fas fa-envelope-open-text"></i>
+                                <span>LACP ACT Message</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <i class="fas fa-server"></i>
+                                <span>Framework-Agnostic Tool</span>
+                            </div>
+                        </div>
+                        <p>Successful demonstration of seamless communication between different agent frameworks without custom integration code.</p>
+                    </div>
+
+                    <div class="experiment-card">
+                        <div class="experiment-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Security Validation</h3>
+                        </div>
+                        <div class="security-tests">
+                            <div class="security-test">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <strong>Tampering Attack</strong>
+                                    <span>Blocked by signature verification</span>
+                                </div>
+                            </div>
+                            <div class="security-test">
+                                <i class="fas fa-redo-alt"></i>
+                                <div>
+                                    <strong>Replay Attack</strong>
+                                    <span>Prevented by transaction ID tracking</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>LACP provides essential application-layer security guarantees beyond what TLS alone can offer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telecom Insights -->
+    <section class="telecom-section">
+        <div class="container">
+            <h2 class="section-title">Insights from Telecommunications</h2>
+            <div class="telecom-content">
+                <p class="telecom-intro">
+                    Drawing from the success of telecommunications standardization, LACP applies proven principles
+                    that transformed disparate, proprietary systems into globally unified networks.
+                </p>
+
+                <div class="telecom-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1G</div>
+                        <div class="timeline-content">
+                            <h4>Channelised Voice</h4>
+                            <p>First common control channels (AMPS, NMT) with simple signaling grammar</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2G</div>
+                        <div class="timeline-content">
+                            <h4>Digital Identity & Security</h4>
+                            <p>GSM introduced digital encryption, SIM cards, and SMS messaging</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3G</div>
+                        <div class="timeline-content">
+                            <h4>State Machines for Soft Handover</h4>
+                            <p>UMTS/WCDMA enabled packet-switched data and complex state management</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4G</div>
+                        <div class="timeline-content">
+                            <h4>All-IP Core</h4>
+                            <p>LTE unified voice, video, and data on an all-IP core architecture</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">5G</div>
+                        <div class="timeline-content">
+                            <h4>Service-Based Architecture</h4>
+                            <p>Microservices exposed via HTTP/2 and JSON with network slicing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="telecom-principles">
+                    <h3>Key Principles Applied to LACP</h3>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Consensus-Driven Standards</h4>
+                            <p>Open collaboration prevents vendor lock-in and ensures interoperability</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-lock"></i>
+                            <h4>Security by Construction</h4>
+                            <p>Security is fundamental, not an add-on, at every protocol layer</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-layer-group"></i>
+                            <h4>Layered Abstractions</h4>
+                            <p>Separation of concerns allows independent evolution of system components</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Narrow Waist Design</h4>
+                            <p>Minimal core ensures stability while extensible edge enables innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Code & Implementation -->
     <section id="code" class="code-section">
@@ -225,15 +539,16 @@
     </section>
 
     <!-- Citation -->
-    <section class="citation">
+    <section id="citation" class="citation">
         <div class="container">
             <h2 class="section-title">Citation</h2>
             <div class="citation-box">
                 <pre id="citation-text">@inproceedings{li2025lacp,
-  title={LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary},
-  author={Li, Xin and Liu, Mengbing and Yuen, Chau},
-  booktitle={NeurIPS 2025 Workshop on AI for Next Generation Networks},
-  year={2025}
+    title={{LLM} Agent Communication Protocol ({LACP}) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary},
+    author={Xin Li and Mengbing Liu and Chau Yuen},
+    booktitle={NeurIPS 2025 Workshop: AI and ML for Next-Generation Wireless Communications and Networking},
+    year={2025},
+    url={https://openreview.net/forum?id=LpwE9cSLkS}
 }</pre>
                 <button class="copy-btn" onclick="copyToClipboard()">
                     <i class="fas fa-copy"></i>
@@ -243,8 +558,10 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
@@ -252,7 +569,7 @@
                     <p>LLM Agent Communication Protocol for NextG Networks</p>
                 </div>
                 <div class="footer-right">
-                    <p>&copy; 2025 Nanyang Technological University. All rights reserved.</p>
+                    <p>&copy; 2025 Xin Li. All rights reserved.</p>
                     <div class="footer-links">
                         <a href="https://ai4nextg.github.io/" target="_blank">AI4NextG Workshop</a>
                         <a href="https://nips.cc/" target="_blank">NeurIPS 2025</a>

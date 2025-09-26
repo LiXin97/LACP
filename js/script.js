@@ -65,44 +65,72 @@ function copyToClipboard() {
     const citationText = document.getElementById('citation-text').textContent;
     const copyBtn = document.querySelector('.copy-btn');
 
-    navigator.clipboard.writeText(citationText).then(() => {
-        // Change button text temporarily
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        copyBtn.style.background = '#10b981';
+    // Clean up the citation text (remove extra whitespace)
+    const cleanCitation = citationText.trim();
 
-        setTimeout(() => {
-            copyBtn.innerHTML = originalHTML;
-            copyBtn.style.background = '';
-        }, 2000);
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = citationText;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        textArea.style.top = '-999999px';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(cleanCitation).then(() => {
+            showCopySuccess(copyBtn);
+        }).catch(err => {
+            console.error('Clipboard API failed: ', err);
+            fallbackCopyToClipboard(cleanCitation, copyBtn);
+        });
+    } else {
+        fallbackCopyToClipboard(cleanCitation, copyBtn);
+    }
+}
 
-        try {
-            document.execCommand('copy');
-            const originalHTML = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            copyBtn.style.background = '#10b981';
+function showCopySuccess(copyBtn) {
+    const originalHTML = copyBtn.innerHTML;
+    const originalStyle = copyBtn.style.cssText;
 
-            setTimeout(() => {
-                copyBtn.innerHTML = originalHTML;
-                copyBtn.style.background = '';
-            }, 2000);
-        } catch (err) {
-            console.error('Fallback copy failed: ', err);
+    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    copyBtn.style.background = '#10b981';
+    copyBtn.style.transform = 'scale(1.05)';
+    copyBtn.style.boxShadow = '0 4px 20px rgba(16, 185, 129, 0.4)';
+
+    setTimeout(() => {
+        copyBtn.innerHTML = originalHTML;
+        copyBtn.style.cssText = originalStyle;
+    }, 2500);
+}
+
+function fallbackCopyToClipboard(text, copyBtn) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showCopySuccess(copyBtn);
+        } else {
+            showCopyError(copyBtn);
         }
+    } catch (err) {
+        console.error('Fallback copy failed: ', err);
+        showCopyError(copyBtn);
+    }
 
-        document.body.removeChild(textArea);
-    });
+    document.body.removeChild(textArea);
+}
+
+function showCopyError(copyBtn) {
+    const originalHTML = copyBtn.innerHTML;
+    const originalStyle = copyBtn.style.cssText;
+
+    copyBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed';
+    copyBtn.style.background = '#ef4444';
+
+    setTimeout(() => {
+        copyBtn.innerHTML = originalHTML;
+        copyBtn.style.cssText = originalStyle;
+    }, 2000);
 }
 
 // Coming soon button interaction
@@ -192,15 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-});
+// Removed conflicting parallax effect - handled in enhanced scroll effects below
 
 // Enhanced mobile menu animation
 const mobileMenuToggle = () => {
@@ -212,11 +232,13 @@ const mobileMenuToggle = () => {
         bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
         bars[1].style.opacity = '0';
         bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+        hamburger.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
     } else {
         bars[0].style.transform = 'none';
         bars[1].style.opacity = '1';
         bars[2].style.transform = 'none';
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = 'auto'; // Restore scrolling
     }
 };
