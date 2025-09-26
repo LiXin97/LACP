@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LACP: LLM Agent Communication Protocol - NeurIPS 2025 Workshop</title>
+    <meta name="description" content="LLM Agent Communication Protocol (LACP) - A telecom-inspired protocol for AI agent interoperability, accepted at NeurIPS 2025 AI4NextG Workshop">
+    <meta name="keywords" content="LLM, AI agents, communication protocol, NeurIPS, NextG networks, LACP, interoperability">
+    <meta name="author" content="Xin Li, Mengbing Liu, Chau Yuen">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LACP: LLM Agent Communication Protocol">
+    <meta property="og:description" content="A telecom-inspired protocol for AI agent interoperability, accepted at NeurIPS 2025 AI4NextG Workshop">
+    <meta property="og:image" content="images/LACP-teaser_updated.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="LACP: LLM Agent Communication Protocol">
+    <meta property="twitter:description" content="A telecom-inspired protocol for AI agent interoperability, accepted at NeurIPS 2025 AI4NextG Workshop">
+    <meta property="twitter:image" content="images/LACP-teaser_updated.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>LACP</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#abstract" class="nav-link">Abstract</a></li>
+                    <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                    <li><a href="#code" class="nav-link">Code</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="conference-badge">
+                    <i class="fas fa-award"></i>
+                    <span>Accepted at NeurIPS 2025 AI4NextG Workshop</span>
+                </div>
+                <h1 class="hero-title">
+                    LLM Agent Communication Protocol (LACP)
+                </h1>
+                <p class="hero-subtitle">
+                    Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary
+                </p>
+                <p class="hero-authors">
+                    Authors: Xin Li, Mengbing Liu, Chau Yuen<br>
+                    Nanyang Technological University
+                </p>
+                <p class="hero-description">
+                    A unified, telecom-inspired communication protocol ensuring safety, interoperability,
+                    and scalability for LLM agents in Next Generation (NextG) networks.
+                </p>
+                <div class="hero-actions">
+                    <a href="assets/neurips_2025.pdf" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-file-pdf"></i>
+                        Read Paper
+                    </a>
+                    <a href="#architecture" class="btn btn-secondary">
+                        <i class="fas fa-sitemap"></i>
+                        View Architecture
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/LACP-teaser_updated.png" alt="LACP Architecture Overview" class="teaser-image">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="abstract">
+        <div class="container">
+            <h2 class="section-title">Abstract</h2>
+            <div class="abstract-content">
+                <p>
+                    This position paper argues that <strong>the field of LLM agents requires a unified, telecom-inspired
+                    communication protocol to ensure safety, interoperability, and scalability, especially within the
+                    context of Next Generation (NextG) networks</strong>. Current ad-hoc communication methods are creating
+                    a fragmented ecosystem, reminiscent of the early "protocol wars" in networking, which stifles
+                    innovation and poses significant risks.
+                </p>
+                <p>
+                    Drawing inspiration from the layered, standardized protocols that underpin modern telecommunications,
+                    we propose the LLM-Agent Communication Protocol (LACP). LACP establishes a three-layer architecture
+                    designed to ensure semantic clarity in communication, transactional integrity for complex tasks,
+                    and robust, built-in security. Such a standard is critical for ensuring that multi-agent systems
+                    can operate safely and reliably in the complex, real-time applications envisioned for 6G and beyond.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Key Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Key Contributions</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Risk Analysis</h3>
+                    <p>Identification of systemic risks arising from the fragmented state of current agent communication.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Design Principles</h3>
+                    <p>Core guidelines for robust, interoperable agent protocols, distilled from telecommunications history.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Protocol Proposal</h3>
+                    <p>LACP, a layered, secure, and extensible framework for LLM-agent interoperability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Critical Discourse</h3>
+                    <p>Anticipation and rebuttal of key counterarguments to standardization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">Three-Layer Architecture</h2>
+            <div class="architecture-content">
+                <div class="architecture-description">
+                    <p>
+                        LACP implements three mutually-insulated layers with well-defined interfaces that enable
+                        independent evolution while ensuring system-wide coherence:
+                    </p>
+                    <div class="layers">
+                        <div class="layer">
+                            <div class="layer-number">1</div>
+                            <div class="layer-content">
+                                <h4>Semantic Layer</h4>
+                                <p>Conveys the <em>intent</em> of communication with universal message types (PLAN, ACT, OBSERVE)
+                                that can be extended with domain-specific content.</p>
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <div class="layer-number">2</div>
+                            <div class="layer-content">
+                                <h4>Transactional Layer</h4>
+                                <p>Ensures reliability and integrity through message signing, sequencing, unique transaction IDs,
+                                and support for atomic transactions.</p>
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <div class="layer-number">3</div>
+                            <div class="layer-content">
+                                <h4>Transport Layer</h4>
+                                <p>Handles efficient and secure delivery, operating transport-agnostically over various
+                                network protocols (HTTP/2, QUIC, WebSockets).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="architecture-image">
+                    <img src="images/LCAP_architecture_updated.png" alt="LACP Three-Layer Architecture" class="arch-diagram">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Code & Implementation -->
+    <section id="code" class="code-section">
+        <div class="container">
+            <h2 class="section-title">Implementation & Code</h2>
+            <div class="code-content">
+                <div class="implementation-info">
+                    <h3>Experimental Validation</h3>
+                    <p>
+                        We implemented a working LACP prototype and conducted comprehensive experiments validating:
+                    </p>
+                    <ul class="validation-list">
+                        <li><i class="fas fa-check"></i> Performance overhead analysis (3.5% latency increase for complex messages)</li>
+                        <li><i class="fas fa-check"></i> Interoperability demonstration with LangChain agents</li>
+                        <li><i class="fas fa-check"></i> Security validation against tampering and replay attacks</li>
+                    </ul>
+                    <div class="code-actions">
+                        <a href="#" class="btn btn-primary" id="coming-soon-btn">
+                            <i class="fas fa-code"></i>
+                            Code Coming Soon
+                        </a>
+                        <a href="https://ai4nextg.github.io/" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Workshop Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="citation">
+        <div class="container">
+            <h2 class="section-title">Citation</h2>
+            <div class="citation-box">
+                <pre id="citation-text">@inproceedings{li2025lacp,
+  title={LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary},
+  author={Li, Xin and Liu, Mengbing and Yuen, Chau},
+  booktitle={NeurIPS 2025 Workshop on AI for Next Generation Networks},
+  year={2025}
+}</pre>
+                <button class="copy-btn" onclick="copyToClipboard()">
+                    <i class="fas fa-copy"></i>
+                    Copy
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>LACP</h3>
+                    <p>LLM Agent Communication Protocol for NextG Networks</p>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2025 Nanyang Technological University. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="https://ai4nextg.github.io/" target="_blank">AI4NextG Workshop</a>
+                        <a href="https://nips.cc/" target="_blank">NeurIPS 2025</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
