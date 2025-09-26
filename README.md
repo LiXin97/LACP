@@ -122,7 +122,7 @@ LACP/
 
 - **[Workshop Website](https://ai4nextg.github.io/)** - NeurIPS 2025 AI4NextG Workshop
 - **[Project Website](https://lixin97.github.io/LACP/)** - Interactive demonstration
-- **[Paper PDF](assets/LACP-teaser.pdf)** - Full paper download
+- **[Paper PDF](assets/NeurIPS_LACP_workshop.pdf)** - Full paper download
 
 ## 📜 License
 
